@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NXDO.Data.MVCP.V2015", "NXDO.Data.MVCP.V2015.csproj", "{B8CD14B6-2F5A-44C6-9D2C-22131FB61EFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WUI.MVCDemo", "..\..\Tester.MVC\WUI.MVCDemo\WUI.MVCDemo.csproj", "{6D13D24E-DD25-49C3-8E53-6C7EDEDB060B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B8CD14B6-2F5A-44C6-9D2C-22131FB61EFB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8CD14B6-2F5A-44C6-9D2C-22131FB61EFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8CD14B6-2F5A-44C6-9D2C-22131FB61EFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8CD14B6-2F5A-44C6-9D2C-22131FB61EFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D13D24E-DD25-49C3-8E53-6C7EDEDB060B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D13D24E-DD25-49C3-8E53-6C7EDEDB060B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D13D24E-DD25-49C3-8E53-6C7EDEDB060B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D13D24E-DD25-49C3-8E53-6C7EDEDB060B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

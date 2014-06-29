@@ -1,0 +1,692 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>NXDO.Data.Reflection.V2015</name>
+    </assembly>
+    <members>
+        <member name="T:NXDO.Data.Reflection.AConstructorHelper">
+            <summary>
+            构造方法帮助器
+            </summary>
+        </member>
+        <member name="M:NXDO.Data.Reflection.AConstructorHelper.Create(System.Object[])">
+            <summary>
+            创建对象实例
+            </summary>
+            <param name="args">构造方法参数值</param>
+            <returns>对象实例</returns>
+        </member>
+        <member name="M:NXDO.Data.Reflection.AConstructorHelper.Create``1(System.Object[])">
+            <summary>
+            创建对象实例
+            </summary>
+            <typeparam name="T">将创建对象的类型</typeparam>
+            <param name="args">构造方法参数值</param>
+            <returns>对象实例</returns>
+        </member>
+        <member name="M:NXDO.Data.Reflection.AConstructorHelper.Dispose">
+            <summary>
+            释放缓存中的构造方法帮助器
+            </summary>
+        </member>
+        <member name="M:NXDO.Data.Reflection.AConstructorHelper.GetAttribute``1">
+            <summary>
+            获取特性
+            </summary>
+            <typeparam name="TAttr">特性类</typeparam>
+            <returns>特性实例</returns>
+        </member>
+        <member name="M:NXDO.Data.Reflection.AConstructorHelper.op_Implicit(NXDO.Data.Reflection.AConstructorHelper)~System.Reflection.ConstructorInfo">
+            <summary>
+            转换成构造方法元数据访问对象
+            </summary>
+            <param name="c">构造方法帮助器</param>
+            <returns>构造方法元数据访问对象</returns>
+        </member>
+        <member name="M:NXDO.Data.Reflection.AConstructorHelper.op_Implicit(System.Reflection.ConstructorInfo)~NXDO.Data.Reflection.AConstructorHelper">
+            <summary>
+            转换成构造方法帮助器
+            </summary>
+            <param name="c">构造方法元数据访问对象</param>
+            <returns>构造方法帮助器</returns>
+        </member>
+        <member name="T:NXDO.Data.Reflection.ExpressionFieldAccesor">
+            <summary>
+            成员变量访问器
+            </summary>
+        </member>
+        <member name="T:NXDO.Data.Extension.TypeHelperExtensions">
+            <summary>
+            类型反射帮助器
+            </summary>
+        </member>
+        <member name="M:NXDO.Data.Extension.TypeHelperExtensions.GetTypeHelper(System.Type)">
+            <summary>
+            获取类型帮助器
+            </summary>
+            <param name="o">需要被操作类型的实例</param>
+            <returns>类型帮助器</returns>
+        </member>
+        <member name="M:NXDO.Data.Extension.TypeHelperExtensions.CreateInstanceEx(System.Type,System.Object[])">
+            <summary>
+            创建对象实例
+            </summary>
+            <param name="type">被创建的类型</param>
+            <param name="args">初始化参数值</param>
+            <returns>对象实例</returns>
+        </member>
+        <member name="M:NXDO.Data.Extension.TypeHelperExtensions.CreateInstanceEx(System.Type,System.Type,System.Object[])">
+            <summary>
+            创建泛型对象实例
+            </summary>
+            <param name="type">被创建的类型</param>
+            <param name="genericType">泛型类型</param>
+            <param name="args">初始化参数值</param>
+            <returns>对象实例</returns>
+        </member>
+        <member name="M:NXDO.Data.Extension.TypeHelperExtensions.CreateInstanceEx(System.Type,System.Type[],System.Object[])">
+            <summary>
+            创建泛型对象实例
+            </summary>
+            <param name="type">被创建的类型</param>
+            <param name="genericTypes">泛型类型</param>
+            <param name="args">初始化参数值</param>
+            <returns>对象实例</returns>
+        </member>
+        <member name="M:NXDO.Data.Extension.TypeHelperExtensions.GetFieldHelper(System.Type,System.String)">
+            <summary>
+            获取成员变量帮助器
+            </summary>
+            <param name="type">类型</param>
+            <param name="fieldName">成员变量名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:NXDO.Data.Extension.TypeHelperExtensions.GetFieldsHelper(System.Type,System.Linq.Expressions.Expression{System.Func{System.Reflection.FieldInfo,System.Boolean}})">
+            <summary>
+            获取满足条件的成员变量帮助器
+            </summary>
+            <param name="type">类型</param>
+            <param name="predicate">过滤条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:NXDO.Data.Extension.TypeHelperExtensions.GetPropertyHelper(System.Type,System.String)">
+            <summary>
+            通过属性名称获取属性帮助器
+            </summary>
+            <param name="type">类型</param>
+            <param name="propertyName">属性名称(区分大小写)</param>
+            <returns>属性帮助器</returns>
+        </member>
+        <member name="M:NXDO.Data.Extension.TypeHelperExtensions.GetPropertiesHelper(System.Type,System.Linq.Expressions.Expression{System.Func{System.Reflection.PropertyInfo,System.Boolean}})">
+            <summary>
+            获取满足条件的属性帮助器
+            </summary>
+            <param name="type">类型</param>
+            <param name="predicate">过滤条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:NXDO.Data.Extension.TypeHelperExtensions.GetMethodHelper(System.Type,System.String,System.Type[])">
+            <summary>
+            通过方法名称获取方法帮助器
+            <para>适用于静态,实例,非公共方法</para>
+            </summary>
+            <param name="type">类型</param>
+            <param name="methodName">方法名称</param>
+            <param name="types">参数类型列表</param>
+            <returns></returns>
+        </member>
+        <member name="M:NXDO.Data.Extension.TypeHelperExtensions.GetMethodsHelper(System.Type,System.Linq.Expressions.Expression{System.Func{System.Reflection.MethodInfo,System.Boolean}})">
+            <summary>
+            获取满足条件的方法帮助器
+            </summary>
+            <param name="type">类型</param>
+            <param name="predicate">过滤条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:NXDO.Data.Extension.TypeHelperExtensions.GetConstructorHelper(System.Type,System.Reflection.BindingFlags,System.Type[])">
+            <summary>
+            获取构造函数帮助器
+            </summary>
+            <param name="type">类型</param>
+            <param name="flag">绑定标志</param>
+            <param name="types">参数类型列表</param>
+            <returns></returns>
+        </member>
+        <member name="M:NXDO.Data.Extension.TypeHelperExtensions.GetConstructorsHelper(System.Type,System.Linq.Expressions.Expression{System.Func{System.Reflection.ConstructorInfo,System.Boolean}})">
+            <summary>
+            获取满足条件的构造函数帮助器
+            </summary>
+            <param name="type">类型</param>
+            <param name="predicate">过滤条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:NXDO.Data.Extension.TypeHelperExtensions.GetValueEx(System.Reflection.PropertyInfo,System.Object)">
+            <summary>
+            获取属性值
+            </summary>
+            <param name="p">属性</param>
+            <param name="oInstance">将获取其属性值的对象, 静态属性时设置null</param>
+            <returns>属性值</returns>
+        </member>
+        <member name="M:NXDO.Data.Extension.TypeHelperExtensions.GetValueEx``1(System.Reflection.PropertyInfo,System.Object)">
+            <summary>
+            获取属性值
+            </summary>
+            <typeparam name="RType">返回值的类型</typeparam>
+            <param name="p">属性</param>
+            <param name="oInstance">将获取其属性值的对象, 静态属性时设置null</param>
+            <returns>属性值</returns>
+        </member>
+        <member name="M:NXDO.Data.Extension.TypeHelperExtensions.SetValueEx(System.Reflection.PropertyInfo,System.Object)">
+            <summary>
+            设置属性值(静态)
+            </summary>
+            <param name="p">属性</param>
+            <param name="value">属性值</param>
+        </member>
+        <member name="M:NXDO.Data.Extension.TypeHelperExtensions.SetValueEx(System.Reflection.PropertyInfo,System.Object,System.Object)">
+            <summary>
+            设置属性值(实例)
+            </summary>
+            <param name="p">属性</param>
+            <param name="oInstance">将设置其属性值的对象, 静态属性时设置null</param>
+            <param name="value">属性值</param>
+        </member>
+        <member name="M:NXDO.Data.Extension.TypeHelperExtensions.GetValueEx(System.Reflection.FieldInfo,System.Object)">
+            <summary>
+            获取成员变量的值
+            </summary>
+            <param name="f">成员变量</param>
+            <param name="oInstance">将获取其值的对象, 静态成员变量时设置null</param>
+            <returns>成员变量的值</returns>
+        </member>
+        <member name="M:NXDO.Data.Extension.TypeHelperExtensions.GetValueEx``1(System.Reflection.FieldInfo,System.Object)">
+            <summary>
+            获取成员变量的值
+            </summary>
+            <typeparam name="RType">返回值的类型</typeparam>
+            <param name="f">成员变量</param>
+            <param name="oInstance">将获取其值的对象, 静态成员变量时设置null</param>
+            <returns>成员变量的值</returns>
+        </member>
+        <member name="M:NXDO.Data.Extension.TypeHelperExtensions.SetValueEx(System.Reflection.FieldInfo,System.Object)">
+            <summary>
+            设置成员变量的值(静态)
+            </summary>
+            <param name="f">成员变量</param>
+            <param name="value">变量值</param>
+        </member>
+        <member name="M:NXDO.Data.Extension.TypeHelperExtensions.SetValueEx(System.Reflection.FieldInfo,System.Object,System.Object)">
+            <summary>
+            设置成员变量的值(实例)
+            </summary>
+            <param name="f">成员变量</param>
+            <param name="oInstance">将获取其值的对象, 静态成员变量时设置null</param>
+            <param name="value">变量值</param>
+        </member>
+        <member name="T:NXDO.Data.Reflection.AFieldHelper">
+            <summary>
+            成员变量帮助器
+            </summary>
+        </member>
+        <member name="M:NXDO.Data.Reflection.AFieldHelper.GetValue(System.Object)">
+            <summary>
+            获取成员变量的值
+            </summary>
+            <param name="tobj">将获取其值的对象</param>
+            <returns>值</returns>
+        </member>
+        <member name="M:NXDO.Data.Reflection.AFieldHelper.GetValue``1(System.Object)">
+            <summary>
+            获取成员变量的值
+            </summary>
+            <typeparam name="RType">返回变量的类型</typeparam>
+            <param name="tobj">将获取其值的对象</param>
+            <returns>值</returns>
+        </member>
+        <member name="M:NXDO.Data.Reflection.AFieldHelper.SetValue(System.Object)">
+            <summary>
+            设置成员变量的值(静态)
+            </summary>
+            <param name="value">变量值</param>
+        </member>
+        <member name="M:NXDO.Data.Reflection.AFieldHelper.SetValue(System.Object,System.Object)">
+            <summary>
+            设置成员变量的值(实例)
+            </summary>
+            <param name="tobj">将设置其值的对象</param>
+            <param name="value">变量值</param>
+        </member>
+        <member name="M:NXDO.Data.Reflection.AFieldHelper.GetAttribute``1">
+            <summary>
+            获取特性
+            </summary>
+            <typeparam name="TAttr">特性类</typeparam>
+            <returns>特性实例</returns>
+        </member>
+        <member name="M:NXDO.Data.Reflection.AFieldHelper.Dispose">
+            <summary>
+            释放缓存中的成员变量帮助器
+            </summary>
+        </member>
+        <member name="M:NXDO.Data.Reflection.AFieldHelper.op_Implicit(NXDO.Data.Reflection.AFieldHelper)~System.Reflection.FieldInfo">
+            <summary>
+            转换成成员变量元数据访问对象
+            </summary>
+            <param name="f">成员变量帮助器</param>
+            <returns>成员变量元数据访问对象</returns>
+        </member>
+        <member name="M:NXDO.Data.Reflection.AFieldHelper.op_Implicit(System.Reflection.FieldInfo)~NXDO.Data.Reflection.AFieldHelper">
+            <summary>
+            转换成成员变量帮助器
+            </summary>
+            <param name="f">成员变量元数据访问对象</param>
+            <returns>成员变量帮助器</returns>
+        </member>
+        <member name="T:NXDO.Data.Reflection.EnumerableHelper`2">
+            <summary>
+            固定结果的帮助迭代器
+            </summary>
+            <typeparam name="T"></typeparam>
+            <typeparam name="THelper"></typeparam>
+            <typeparam name="TMember"></typeparam>
+        </member>
+        <member name="T:NXDO.Data.Reflection.AMethodHelper">
+            <summary>
+            方法帮助器
+            </summary>
+        </member>
+        <member name="M:NXDO.Data.Reflection.AMethodHelper.Invoke(System.Object[])">
+            <summary>
+            调用方法(静态)
+            </summary>
+            <param name="args">参数值</param>
+        </member>
+        <member name="M:NXDO.Data.Reflection.AMethodHelper.Invoke(System.Object,System.Object[])">
+            <summary>
+            调用方法(实例)
+            </summary>
+            <param name="tobj">将调用其方法的对象</param>
+            <param name="args">参数值</param>
+        </member>
+        <member name="M:NXDO.Data.Reflection.AMethodHelper.InvokeReturn(System.Object[])">
+            <summary>
+            调用方法(静态)
+            </summary>
+            <param name="args">参数值</param>
+            <returns>调用结果</returns>
+        </member>
+        <member name="M:NXDO.Data.Reflection.AMethodHelper.InvokeReturn(System.Object,System.Object[])">
+            <summary>
+            调用方法(实例)
+            </summary>
+            <param name="tobj">将调用其方法的对象</param>
+            <param name="args">参数值</param>
+            <returns>调用结果</returns>
+        </member>
+        <member name="M:NXDO.Data.Reflection.AMethodHelper.InvokeReturn``1(System.Object[])">
+            <summary>
+            调用方法(静态)
+            </summary>
+            <typeparam name="RType">返回值类型</typeparam>
+            <param name="args">参数值</param>
+            <returns>调用结果</returns>
+        </member>
+        <member name="M:NXDO.Data.Reflection.AMethodHelper.InvokeReturn``1(System.Object,System.Object[])">
+            <summary>
+            调用方法(实例)
+            </summary>
+            <typeparam name="RType">返回值类型</typeparam>
+            <param name="tobj">将调用其方法的对象</param>
+            <param name="args">参数值</param>
+            <returns>调用结果</returns>
+        </member>
+        <member name="M:NXDO.Data.Reflection.AMethodHelper.GetAttribute``1">
+            <summary>
+            获取特性
+            </summary>
+            <typeparam name="TAttr">特性类</typeparam>
+            <returns>特性实例</returns>
+        </member>
+        <member name="M:NXDO.Data.Reflection.AMethodHelper.Dispose">
+            <summary>
+            释放缓存中的方法帮助器
+            </summary>
+        </member>
+        <member name="M:NXDO.Data.Reflection.AMethodHelper.op_Implicit(NXDO.Data.Reflection.AMethodHelper)~System.Reflection.MethodInfo">
+            <summary>
+            转换成方法元数据访问对象
+            </summary>
+            <param name="m">方法帮助器</param>
+            <returns>方法元数据访问对象</returns>
+        </member>
+        <member name="M:NXDO.Data.Reflection.AMethodHelper.op_Implicit(System.Reflection.MethodInfo)~NXDO.Data.Reflection.AMethodHelper">
+            <summary>
+            转换成方法帮助器
+            </summary>
+            <param name="m">方法元数据访问对象</param>
+            <returns>方法帮助器</returns>
+        </member>
+        <member name="M:NXDO.Data.Reflection.MethodHelper.initMethod">
+            <summary>
+            初始化,设置各个属性与GET/SET
+            </summary>
+        </member>
+        <member name="T:NXDO.Data.Reflection.APropertyHelper">
+            <summary>
+            属性帮助器
+            </summary>
+        </member>
+        <member name="M:NXDO.Data.Reflection.APropertyHelper.SetValue(System.Object,System.Object)">
+            <summary>
+            设置属性值
+            </summary>
+            <param name="tobj">将设置其属性值的对象</param>
+            <param name="value">属性值</param>
+        </member>
+        <member name="M:NXDO.Data.Reflection.APropertyHelper.SetValue(System.Object)">
+            <summary>
+            设置属性值
+            </summary>
+            <param name="value">属性值</param>
+        </member>
+        <member name="M:NXDO.Data.Reflection.APropertyHelper.GetValue(System.Object)">
+            <summary>
+            获取属性值
+            </summary>
+            <param name="tobj">将获取其属性值的对象</param>
+            <returns>属性值</returns>
+        </member>
+        <member name="M:NXDO.Data.Reflection.APropertyHelper.GetValue``1(System.Object)">
+            <summary>
+            获取属性值
+            </summary>
+            <typeparam name="RType">属性值的返回类型</typeparam>
+            <param name="tobj">将获取其属性值的对象</param>
+            <returns>属性值</returns>
+        </member>
+        <member name="M:NXDO.Data.Reflection.APropertyHelper.GetAttribute``1">
+            <summary>
+            获取特性
+            </summary>
+            <typeparam name="TAttr">特性类</typeparam>
+            <returns>特性实例</returns>
+        </member>
+        <member name="M:NXDO.Data.Reflection.APropertyHelper.Dispose">
+            <summary>
+            释放缓存中的属性帮助器
+            </summary>
+        </member>
+        <member name="M:NXDO.Data.Reflection.APropertyHelper.op_Implicit(NXDO.Data.Reflection.APropertyHelper)~System.Reflection.PropertyInfo">
+            <summary>
+            转换成属性元数据访问对象
+            </summary>
+            <param name="p">属性帮助器</param>
+            <returns>属性元数据访问对象</returns>
+        </member>
+        <member name="M:NXDO.Data.Reflection.APropertyHelper.op_Implicit(System.Reflection.PropertyInfo)~NXDO.Data.Reflection.APropertyHelper">
+            <summary>
+            转换成属性帮助器
+            </summary>
+            <param name="p">属性元数据访问对象</param>
+            <returns>属性帮助器</returns>
+        </member>
+        <member name="P:NXDO.Data.Reflection.APropertyHelper.Descriptor">
+            <summary>
+            获取属性描述器
+            </summary>
+        </member>
+        <member name="T:NXDO.Data.Reflection.PropertyHelper">
+            <summary>
+            属性帮助器
+            </summary>
+            <typeparam name="T">类型</typeparam>
+        </member>
+        <member name="M:NXDO.Data.Reflection.PropertyHelper.initMethod">
+            <summary>
+            初始化,设置各个属性与GET/SET
+            </summary>
+        </member>
+        <member name="P:NXDO.Data.Reflection.PropertyHelper.Property">
+            <summary>
+            属性
+            </summary>
+        </member>
+        <member name="P:NXDO.Data.Reflection.PropertyHelper.IsStatic">
+            <summary>
+            是否静态
+            </summary>
+        </member>
+        <member name="P:NXDO.Data.Reflection.PropertyHelper.GetMethod">
+            <summary>
+            Get方法
+            </summary>
+        </member>
+        <member name="P:NXDO.Data.Reflection.PropertyHelper.SetMethod">
+            <summary>
+            Set方法
+            </summary>
+        </member>
+        <member name="T:NXDO.Data.Reflection.ITypeHelper">
+            <summary>
+            类型帮助器接口
+            </summary>
+            <typeparam name="T">需要被操作类型</typeparam>
+        </member>
+        <member name="M:NXDO.Data.Reflection.ITypeHelper.GetField(System.String)">
+            <summary>
+            通过成员变量名称获取成员变量帮助器
+            </summary>
+            <param name="fieldName">成员变量名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:NXDO.Data.Reflection.ITypeHelper.GetProperty(System.String)">
+            <summary>
+            通过属性名称获取属性帮助器
+            </summary>
+            <param name="propertyName">属性名称(区分大小写)</param>
+            <returns>属性帮助器</returns>
+        </member>
+        <member name="M:NXDO.Data.Reflection.ITypeHelper.GetMethod(System.String,System.Type[])">
+            <summary>
+            通过方法名称获取方法帮助器
+            </summary>
+            <param name="methodName">方法名称</param>
+            <param name="types">参数类型列表</param>
+            <returns></returns>
+        </member>
+        <member name="M:NXDO.Data.Reflection.ITypeHelper.GetConstructor(System.Reflection.BindingFlags,System.Type[])">
+            <summary>
+            获取构造函数帮助器
+            </summary>
+            <param name="flag">绑定标志</param>
+            <param name="types">参数类型列表</param>
+            <returns></returns>
+        </member>
+        <member name="M:NXDO.Data.Reflection.ITypeHelper.GetFields(System.Linq.Expressions.Expression{System.Func{System.Reflection.FieldInfo,System.Boolean}})">
+            <summary>
+            获取满足条件的变量帮助器
+            </summary>
+            <param name="predicate">过滤条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:NXDO.Data.Reflection.ITypeHelper.GetProperties(System.Linq.Expressions.Expression{System.Func{System.Reflection.PropertyInfo,System.Boolean}})">
+            <summary>
+            获取满足条件的属性帮助器
+            </summary>
+            <param name="predicate">过滤条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:NXDO.Data.Reflection.ITypeHelper.GetMethods(System.Linq.Expressions.Expression{System.Func{System.Reflection.MethodInfo,System.Boolean}})">
+            <summary>
+            获取满足条件的方法帮助器
+            </summary>
+            <param name="predicate">过滤条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:NXDO.Data.Reflection.ITypeHelper.GetConstructors(System.Linq.Expressions.Expression{System.Func{System.Reflection.ConstructorInfo,System.Boolean}})">
+            <summary>
+            获取满足条件的构造函数帮助器
+            </summary>
+            <param name="predicate">过滤条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:NXDO.Data.Reflection.ITypeHelper.GetAttribute``1">
+            <summary>
+            获取特性
+            </summary>
+            <typeparam name="TAttr">特性类</typeparam>
+            <returns>特性实例</returns>
+        </member>
+        <member name="T:NXDO.Data.Reflection.TypeHelper">
+            <summary>
+            类型帮助器
+            </summary>
+        </member>
+        <member name="M:NXDO.Data.Reflection.TypeHelper.GetField(System.Type,System.String)">
+            <summary>
+            获取成员变量帮助器
+            </summary>
+            <param name="type">类型</param>
+            <param name="fieldName">成员变量名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:NXDO.Data.Reflection.TypeHelper.GetFields(System.Type,System.Linq.Expressions.Expression{System.Func{System.Reflection.FieldInfo,System.Boolean}})">
+            <summary>
+            获取满足条件的成员变量帮助器
+            </summary>
+            <param name="type">类型</param>
+            <param name="predicate">过滤条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:NXDO.Data.Reflection.TypeHelper.GetProperty(System.Type,System.String)">
+            <summary>
+            通过属性名称获取属性帮助器
+            </summary>
+            <param name="type">类型</param>
+            <param name="propertyName">属性名称(区分大小写)</param>
+            <returns>属性帮助器</returns>
+        </member>
+        <member name="M:NXDO.Data.Reflection.TypeHelper.GetProperties(System.Type,System.Linq.Expressions.Expression{System.Func{System.Reflection.PropertyInfo,System.Boolean}})">
+            <summary>
+            获取满足条件的属性帮助器
+            </summary>
+            <param name="type">类型</param>
+            <param name="predicate">过滤条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:NXDO.Data.Reflection.TypeHelper.GetMethod(System.Type,System.String,System.Type[])">
+            <summary>
+            通过方法名称获取方法帮助器
+            <para>适用于静态,实例,非公共方法</para>
+            </summary>
+            <param name="type">类型</param>
+            <param name="methodName">方法名称</param>
+            <param name="types">参数类型列表</param>
+            <returns></returns>
+        </member>
+        <member name="M:NXDO.Data.Reflection.TypeHelper.GetMethods(System.Type,System.Linq.Expressions.Expression{System.Func{System.Reflection.MethodInfo,System.Boolean}})">
+            <summary>
+            获取满足条件的方法帮助器
+            </summary>
+            <param name="type">类型</param>
+            <param name="predicate">过滤条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:NXDO.Data.Reflection.TypeHelper.GetConstructor(System.Type,System.Reflection.BindingFlags,System.Type[])">
+            <summary>
+            获取构造函数帮助器
+            </summary>
+            <param name="type">类型</param>
+            <param name="flag">绑定标志</param>
+            <param name="types">参数类型列表</param>
+            <returns></returns>
+        </member>
+        <member name="M:NXDO.Data.Reflection.TypeHelper.GetConstructors(System.Type,System.Linq.Expressions.Expression{System.Func{System.Reflection.ConstructorInfo,System.Boolean}})">
+            <summary>
+            获取满足条件的构造函数帮助器
+            </summary>
+            <param name="type">类型</param>
+            <param name="predicate">过滤条件</param>
+            <returns></returns>
+        </member>
+        <member name="P:NXDO.Data.Reflection.TypeHelper.CacheFactory">
+            <summary>
+            缓存工厂
+            </summary>
+        </member>
+        <member name="T:NXDO.Data.Reflection.TypeHelper`1">
+            <summary>
+            类型帮助器
+            </summary>
+            <typeparam name="T">需要被操作类型</typeparam>
+        </member>
+        <member name="M:NXDO.Data.Reflection.TypeHelper`1.GetField(System.String)">
+            <summary>
+            获取成员变量帮助器
+            </summary>
+            <param name="type">类型</param>
+            <param name="fieldName">成员变量名称</param>
+            <returns></returns>
+        </member>
+        <member name="M:NXDO.Data.Reflection.TypeHelper`1.GetFields(System.Linq.Expressions.Expression{System.Func{System.Reflection.FieldInfo,System.Boolean}})">
+            <summary>
+            获取满足条件的成员变量帮助器
+            </summary>
+            <param name="type">类型</param>
+            <param name="predicate">过滤条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:NXDO.Data.Reflection.TypeHelper`1.GetProperty(System.String)">
+            <summary>
+            通过属性名称获取属性帮助器
+            </summary>
+            <param name="type">类型</param>
+            <param name="propertyName">属性名称(区分大小写)</param>
+            <returns>属性帮助器</returns>
+        </member>
+        <member name="M:NXDO.Data.Reflection.TypeHelper`1.GetProperties(System.Linq.Expressions.Expression{System.Func{System.Reflection.PropertyInfo,System.Boolean}})">
+            <summary>
+            获取满足条件的属性帮助器
+            </summary>
+            <param name="type">类型</param>
+            <param name="predicate">过滤条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:NXDO.Data.Reflection.TypeHelper`1.GetMethod(System.String,System.Type[])">
+            <summary>
+            通过方法名称获取方法帮助器
+            <para>适用于静态,实例,非公共方法</para>
+            </summary>
+            <param name="type">类型</param>
+            <param name="methodName">方法名称</param>
+            <param name="types">参数类型列表</param>
+            <returns></returns>
+        </member>
+        <member name="M:NXDO.Data.Reflection.TypeHelper`1.GetMethods(System.Linq.Expressions.Expression{System.Func{System.Reflection.MethodInfo,System.Boolean}})">
+            <summary>
+            获取满足条件的方法帮助器
+            </summary>
+            <param name="type">类型</param>
+            <param name="predicate">过滤条件</param>
+            <returns></returns>
+        </member>
+        <member name="M:NXDO.Data.Reflection.TypeHelper`1.GetConstructor(System.Reflection.BindingFlags,System.Type[])">
+            <summary>
+            获取构造函数帮助器
+            </summary>
+            <param name="type">类型</param>
+            <param name="flag">绑定标志</param>
+            <param name="types">参数类型列表</param>
+            <returns></returns>
+        </member>
+        <member name="M:NXDO.Data.Reflection.TypeHelper`1.GetConstructors(System.Linq.Expressions.Expression{System.Func{System.Reflection.ConstructorInfo,System.Boolean}})">
+            <summary>
+            获取满足条件的构造函数帮助器
+            </summary>
+            <param name="type">类型</param>
+            <param name="predicate">过滤条件</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
